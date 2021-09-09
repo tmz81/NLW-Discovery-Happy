@@ -51,11 +51,13 @@ module.exports = {
   async saveOrphanage(req, res) {
     const fields = req.body;
 
+    //validate se todos os campos estão preenchidos
     if (Object.values(fields).includes("")) {
       return res.send("Todos os campos devem ser preenchidos");
     }
 
     try {
+      // save um orphanage
       const db = await Database;
       await saveOrphanage(db, {
         lat: fields.lat,
@@ -69,6 +71,7 @@ module.exports = {
         open_on_weekends: fields.open_on_weekends,
       });
 
+      //depois que salva o form, redireciona o usuário de volta para o mapa
       return res.redirect("/orphanages");
     } catch (error) {
       console.log(error);

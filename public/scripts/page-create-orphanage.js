@@ -2,11 +2,14 @@
 const map = L.map('mapid').setView([-8.0629497, -34.8735617], 16);
 
 //Create and add titleLayer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 //Create icon
 const icon = L.icon({
-  iconUrl: "./public/images/map-marker.svg",
+  iconUrl: "/images/map-marker.svg",
   iconSize: [58, 68],
   iconAnchor: [29, 68]
 });
@@ -21,7 +24,7 @@ map.on('click', (event) => {
     document.querySelector('[name=lat]').value = lat;
     document.querySelector('[name=lng]').value = lng;
 
-    // remover icon
+    // remover last marker
     marker && map.removeLayer(marker)
 
     // add icon layer
@@ -29,54 +32,61 @@ map.on('click', (event) => {
     .addTo(map)
 })
 
-// photos uploa
+// upload photos field
 function addPhotoField() {
-   // pegar o container de fotos #Images
+   // get #images
    const container = document.querySelector('#images')
-   // pegar o container para duplicar .new-image
+   // get .new-upload
    const fieldsContainer = document.querySelectorAll('.new-upload')
-   // realizar o clone da última imagem adicionada.
+   // clone last images
    const newFieldContainer = fieldsContainer[fieldsContainer.length - 1].cloneNode(true)
-   // verificar se o campo está vazio, se sim, não adiconar ao container de images
+   // check empty field
    const input = newFieldContainer.children[0]
    if(input.value == "") {
      return
    }
-   // limpar o campo antes de adiconar ao container de imagens
+   // clear field
    input.value = ""
-   // adicionar o clone ao container de #images
+   // add clone to container
    container.appendChild(newFieldContainer)
 }
 
 function deleteField(event) {
   const span = event.currentTarget
-
   const fieldsContainer = document.querySelectorAll('.new-upload')
-
-  if(fieldsContainer.length <= 1) {
-    // limpar o valor do campo
+  if(fieldsContainer.length <= 2) {
+    // clear value input
     span.parentNode.children[0].value = ""
     return
   }
 
-  // deletar o campo
   span.parentNode.remove()
+  
 }
 
 
-// select yes or no
+// Active selection switch
 function toggleSelect(event) {
-
-  // retirar a class .active dos botoes
+  // remove class .active if exists
   document.querySelectorAll('.button-select button')
-  .forEach( function(button) {
-    button.classList.remove('active')
-  })
-  // colocar a class .active nesse botão clicado
+  .forEach((button) => button.classList.remove('active'))
+
+  // add class .active
   const button = event.currentTarget
   button.classList.add('active')
-  // atualizar o meu input hidden com o valor selecionado
+  
+  // get selected button
   const input = document.querySelector('[name="open-on-weekends"]')
 
+  // check value
   input.value = button.dataset.value
+}
+
+function validate(event) {
+  // validate se lat and lng estão preenchidos
+  const needsLatAndLang = false;
+  if(needsLatAndLang){
+    event.preventDefault()
+    alert('Selecione um ponto no mapa')
+  }
 }

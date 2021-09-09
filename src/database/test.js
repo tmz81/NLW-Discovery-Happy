@@ -2,6 +2,7 @@ const Database = require("./db");
 const saveOrphanage = require("./saveOrphanage");
 
 Database.then(async (db) => {
+  //inserir dados na tabela
   await saveOrphanage(db, {
     lat: "-27.2114974",
     lng: "-49.6544793",
@@ -22,8 +23,8 @@ Database.then(async (db) => {
   const selectedOrphanages = await db.all("SELECT * FROM orphanages");
   console.log(selectedOrphanages);
 
-  const orphanages = await db.all('SELECT * FROM orphanages WHERE id = "1"');
-  console.log(orphanages);
+  const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "2"');
+  console.log(orphanage);
 
   // console.log(await db.run("DELETE FROM orphanages WHERE id = '2'"))
 });
