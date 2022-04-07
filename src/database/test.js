@@ -1,7 +1,8 @@
 const Database = require("./db");
 const saveOrphanage = require("./saveOrphanage");
 
-Database.then(async (db) => {
+Database.then(async db => {
+
   //inserir dados na tabela
   await saveOrphanage(db, {
     lat: "-27.2114974",
@@ -17,7 +18,7 @@ Database.then(async (db) => {
     instructions:
       "Venha como se sentir a vontade e traga muito amor e paciência para dar",
     opening_hours: "Horário de visitas Das 18h até 8h",
-    open_on_weekends: "0",
+    open_on_weekends: "1",
   });
 
   const selectedOrphanages = await db.all("SELECT * FROM orphanages");

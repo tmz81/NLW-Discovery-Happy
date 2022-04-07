@@ -30,8 +30,8 @@
 }
 
 .button-select {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-select button {
@@ -50,9 +50,9 @@
 }
 
 .button-select button:first-child {
-  border-radius: 2rem 0 0 2rem;
+  border-radius: 2rem 2rem;
 }
 
 .button-select button:last-child {
-  border-radius: 0 2rem 2rem 0;
+  border-radius: 2rem 2rem;
 }
