@@ -19,15 +19,15 @@ h1,
 }
 
 #logo {
-  animation-delay: 50ms;
+  animation-delay: 500ms;
 }
 
 .location {
-  animation-delay: 100ms;
+  animation-delay: 450ms;
 }
 
 main h1 {
-  animation-delay: 150ms;
+  animation-delay: 500ms;
   font-size: clamp(4rem, 8vw, 8.4rem);
 }
 
@@ -36,7 +36,7 @@ main h1 {
 }
 
 .visit p {
-  animation-delay: 200ms;
+  animation-delay: 500ms;
 }
 
 .visit a {
@@ -52,8 +52,8 @@ main h1 {
 
   margin: auto;
 
-  transition: background 200ms;
-  animation-delay: 250ms;
+  transition: background 600ms;
+  animation-delay: 450ms;
 }
 
 /* Desktop version */
@@ -61,8 +61,8 @@ main h1 {
 @media (min-width: 760px) {
   #container {
     background: url("../images/bg.svg") no-repeat 80% /
-      clamp(30rem, 54vw, 56rem);
-    padding: 5rem 2rem;
+      clamp(30rem, 50vw, 50rem);
+    padding: 2rem 2rem;
   }
 
   header {

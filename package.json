@@ -2,9 +2,9 @@
     "name": "nlw",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "src/server.js",
     "scripts": {
-        "start": "node src/server.js"
+        "start": "nodemon ."
     },
     "keywords": [],
     "author": "tmz81",
@@ -12,7 +12,9 @@
     "dependencies": {
         "express": "*",
         "hbs": "*",
-        "nodemon": "*",
         "sqlite-async": "^1.1.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
     }
 }

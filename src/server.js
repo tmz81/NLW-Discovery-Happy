@@ -1,9 +1,7 @@
-//import dependencies
 const express = require('express');
 const path = require('path');
 const pages = require('./pages.js');
 
-// server start 
 const server = express();
 
 server
@@ -23,4 +21,4 @@ server
   .post("/save-orphanage", pages.saveOrphanage);
 
 // server on  
-server.listen(process.env.PORT || 5000);
+server.listen(8080, console.log('🚀 Runner in http://localhost:8080/'));
