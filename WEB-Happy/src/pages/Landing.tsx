@@ -17,7 +17,7 @@ export default function Landing() {
           <span>Pernambuco</span>
         </div>
 
-        {/* <Link to="/app" className="entrer-app"></Link> */}
+        <Link to="/app" className="entrer-app"></Link>
       </div>
     </div>
   );
