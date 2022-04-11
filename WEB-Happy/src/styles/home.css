@@ -1,0 +1,34 @@
+#page-map {
+  position: relative;
+  display: flex;
+  
+  width: 100vw;
+  height: 100vh;
+}
+
+#page-map aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 440px;
+  padding: 80px;
+  background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
+}
+
+#page-map h2 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 42px;
+  margin-top: 64px;
+}
+
+#page-map aside footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 24px;
+}
+
+#page-map aside footer strong {
+  font-weight: 800px;
+}

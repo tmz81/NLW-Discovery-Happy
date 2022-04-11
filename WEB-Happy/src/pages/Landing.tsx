@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaArrowCircleRight } from "react-icons/fa";
 import logo from "../assets/logo.svg";
 import '../styles/landing.css';
 
@@ -18,7 +19,9 @@ export default function Landing() {
           <span>Pernambuco</span>
         </div>
 
-        <Link to="/app" className="entrer-app"></Link>
+        <Link to="/app" className="entrer-app">
+          <FaArrowCircleRight size={60} color="#FFD666" />
+        </Link>
       </div>
     </div>
   );
