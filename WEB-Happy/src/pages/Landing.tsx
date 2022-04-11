@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import '../styles/landing.css';
 
 export default function Landing() {
   return (
-    <div>
-      <div>
+    <div className="page-landing">
+      <div className="content-wrapper">
         <img src={logo} alt="Happy" />
 
         <main>
@@ -12,7 +13,7 @@ export default function Landing() {
           <p>Visite casas de abrigo e mude o dia de muitas crianças.</p>
         </main>
 
-        <div>
+        <div className="Location">
           <strong>Recife</strong>
           <span>Pernambuco</span>
         </div>
