@@ -49,7 +49,7 @@ export default function Home() {
       </Map>
 
       <Link to="#" className="create-house">
-        <FaPlus size={32} color="#FFF" />
+        <FaPlus size={32} color="#FFD666" />
       </Link>
     </div>
   );
