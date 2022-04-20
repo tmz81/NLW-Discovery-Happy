@@ -1,12 +1,12 @@
 import {
   Map as LeafletMap,
-  MapContainerProps as LeafletMapProps,
+  MapProps as LeafletMapProps,
   TileLayer,
 } from "react-leaflet";
 
 interface MapProps extends LeafletMapProps {
   interactive?: boolean;
-  children: React.ReactNode;
+  // children: React.ReactNode;
 }
 
 export default function Map({
@@ -17,7 +17,7 @@ export default function Map({
   return (
     <LeafletMap
       center={[-27.2092052, -49.6401092]}
-      // zoom={1}
+      zoom={1}
       style={{ width: "100%", height: "100%" }}
       touchZoom={interactive}
       zoomControl={interactive}
